@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+    --bg-color: #dabfff;
+    --text-color: #907ad6;
+    --main-color: #4f518c;
+    --accent-color: #2c2a4a;
+
+    /* --bg-color: #e7ecef;
+    --text-color: #274c77;
+    --main-color: #6096ba;
+    --accent-color: #a3cef1; */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+h1,
+h3,
+header,
+ul {
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+main {
+    max-width: 400px;
+    margin: 1rem auto;
+    background-color: #fff;
+    padding: 2rem 1rem;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+
+header {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header div:first-child {
+    flex-basis: 100%;
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+
+header div:nth-child(n + 2) {
+    flex-basis: 50%;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+header h5 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+form input:not(#type),
+form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    height: 42px;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+form button {
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+form button:hover {
+    background-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+form label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+form div:nth-child(-n + 2) {
+    flex-basis: 100%;
+}
+
+form div:nth-child(n + 3) {
+    flex-basis: calc(100% - 5px);
+}
+
+input#type {
+    appearance: none;
+    position: absolute;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: var(--main-color);
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.option span {
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.option::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    background-color: #fff;
+    height: calc(100% - 10px);
+    width: calc(50% - 10px);
+    transform: translateX(5px);
+    border-radius: inherit;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.6s;
+}
+
+input#type:checked~.option::before {
+    left: 50%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5px 10px;
+    position: relative;
+    transition: background 0.5s;
+}
+
+ul li:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.name h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.name p {
+    font-size: 0.8rem;
+    color: #6D6875;
+}
+
+.amount {
+    font-weight: 600;
+}
+
+.amount.income {
+    color: #55A630;
+}
+
+.amount.expense {
+    color: #D90429;
+}
+
+.action {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #D90429;
+    color: #fff;
+    height: 100%;
+    width: 50px;
+    display: grid;
+    place-items: center;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: all 0.6s;
+}
+
+ul li:hover .action {
+    transform: scaleX(1);
+}
+
+.action svg {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+#status {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
